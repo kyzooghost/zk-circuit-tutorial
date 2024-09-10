@@ -16,6 +16,8 @@ Trusted setup - generate Common Reference String (CRS) = proving key + verificat
 Powers of Tau
 - Multi-party ceremony where participants contribute entropy to generate secure zk-SNARK parameters
 - Assume that at least one participant discards their secret correctly
+- .ptau is circuit-independent
+- pot12.ptau -> 2^12 - 1 constraints, or ~4000 constraints
 
 Private input signal - string is converted to BigInt
 
