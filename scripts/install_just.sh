@@ -20,6 +20,7 @@ install_linux() {
     # Check if apt-get is available (Debian/Ubuntu)
     if command -v apt-get &> /dev/null; then
         sudo apt-get update
+        # This fails on Debian 11 on WSL, so install manually with `curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to ~bin``
         sudo apt-get install -y just
     
     # Check if dnf is available (Fedora)  

@@ -29,6 +29,7 @@ install_rust() {
 # Function to install Circom
 install_circom() {
     echo "Circom is not installed. Installing Circom..."
+    # Check if directory exists
     if [ ! -d "$CIRCOM_INSTALL_DIR" ]; then
         echo "Cloning Circom repository..."
         git clone https://github.com/iden3/circom.git "$CIRCOM_INSTALL_DIR"
@@ -64,8 +65,10 @@ maybe_install_circom() {
     if command_exists circom; then
         echo "Circom is already installed. Skipping installation."
     else
+        # read -p - prompt for user input, assign it to a variable
         # Directory to install Circom
         read -p "Enter directory to install Circom (default: \$HOME/circom): " CIRCOM_INSTALL_DIR
+        # ':-' check if unset or null, then assign default value'
         CIRCOM_INSTALL_DIR=${CIRCOM_INSTALL_DIR:-"$HOME/circom"}
 
         install_circom

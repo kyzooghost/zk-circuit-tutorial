@@ -25,12 +25,14 @@ cd "$TARGET_DIR"
 snarkjs powersoftau prepare phase2 "$PROJECT_DIR/$PTAU_FILE" pot12_final.ptau -v
 
 # Generate a zkey file named according to the R1CS filename
+# Powers of Tau + R1CS -> zkey
 snarkjs groth16 setup "${R1CS_BASENAME}.r1cs" pot12_final.ptau "${R1CS_BASENAME}_0000.zkey"
 
 # Contribute to phase 2
 snarkjs zkey contribute "${R1CS_BASENAME}_0000.zkey" "${R1CS_BASENAME}_0001.zkey" --name="Foo" -v
 
 # Export verification key
+# Verification key, generated from proving key?
 snarkjs zkey export verificationkey "${R1CS_BASENAME}_0001.zkey" "${R1CS_BASENAME}_verification_key.json"
 
 echo "Phase 2 of the trusted setup completed."
