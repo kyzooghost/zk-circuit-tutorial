@@ -31,3 +31,7 @@ Proof
 - pi_a, pi_b, pi_c are elliptic curve elements
 - Metadata on protocol (groth16) and curve (bn128)
 - Not useful in isolation, need public output that come with it
+
+`echo -n "foo" | shasum -a 256` - Get SHA-256 hash of 'foo'
+
+circomlibjs - JS wrapper for circomlib
