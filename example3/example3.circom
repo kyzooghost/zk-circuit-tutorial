@@ -3,7 +3,9 @@ pragma circom 2.0.0;
 include "circomlib/circuits/poseidon.circom";
 
 template SignMessage () {
+  // Private key
   signal input identity_secret; 
+  // Public key
   signal input identity_commitment;
   signal input message;
   signal output signature;

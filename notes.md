@@ -35,4 +35,15 @@ Proof
 `echo -n "foo" | shasum -a 256` - Get SHA-256 hash of 'foo'
 
 circomlibjs - JS wrapper for circomlib
- 
+
+Digital signature scheme
+- Generate public + private key
+- Generate signature = message + private key
+- Verify signature signed by public key
+
+Poseidon hash vs keccak256
+- Keccak256 uses more expensive operations like XOR and bitwise rotation
+- Poseidon uses simple arithmetic operations over a finite field
+- Keccak256 requires many more constraints
+- Keccak256 prioritizes security and general hashing performance, not for compatibility with field arithmetic
+- Poseidon allows for smaller zk circuits
