@@ -35,3 +35,4 @@ Proof
 `echo -n "foo" | shasum -a 256` - Get SHA-256 hash of 'foo'
 
 circomlibjs - JS wrapper for circomlib
+ 
