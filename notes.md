@@ -47,3 +47,12 @@ Poseidon hash vs keccak256
 - Keccak256 requires many more constraints
 - Keccak256 prioritizes security and general hashing performance, not for compatibility with field arithmetic
 - Poseidon allows for smaller zk circuits
+
+How would you design a "ZK Identity" system for proving you are over 18? What are some other properties you might want to prove? At a high level, how would you implement it, and what challenges do you see? Research existing solutions to get a better understanding of how they are implemented.
+- Private input is DOB
+- Name, Gender
+- Challenge -> falsified IDs, so need to verify that ID provided itself is legit
+
+For public blockchains like Ethereum, sometimes a Layer 2 (L2) is used to allow for faster, cheaper and more transactions. At a high level, how would you design an L2 using ZKPs? Explain some challenges you see with this. Research existing solutions to get a better understanding of how they are implemented.
+- Validate state change - ?private input is previous state root + transaction
+- How many constraints to validate state transition function?
