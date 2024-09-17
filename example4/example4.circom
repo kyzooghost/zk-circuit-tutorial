@@ -23,6 +23,16 @@ template SignMessage (n) {
   // Assuming three identities in total
   // TODO: Implement membership check
   // NOTE: We want to prove that our identity is one of the three
+
+  // Sigh what did I learn? That variables are lame
+  // Just assign each intermediate value of the variable to a signal instead, and Circom won't scream
+  // Literally, just create an array type signal, and just use each index to store new variable values
+  signal temp[n + 1];
+  temp[0] <== 1;
+  for (var i = 1; i < n + 1; i++) {
+    temp[i] <== temp[i - 1] * (myIdentity - identity_commitments[i - 1]);
+  }
+  temp[n] === 0;
 }
 
 component main {public [identity_commitments, message]} = SignMessage(3);
